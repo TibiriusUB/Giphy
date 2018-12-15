@@ -1,6 +1,6 @@
 // Set the Global variables
 
-var arr = ["pacman","asteroids","digdug","mappy","tron","mrdo","centepede","millipede","dragonslair","galaga","galaxian","phoenix","spaceinvaders"];
+var arr = ["pacman","asteroids","dig dug","joust","missle command","spy hunter","centepede","robotron 2084","dragons lair","galaga","galaxian","donkey kong","space invaders"];
 var subject =""
 var newsub =""
 
@@ -43,7 +43,7 @@ $(document).off("click").on("click", function(event){
     }
 });
 
-// get the [swearing redacted] gifs to animate, and pause.
+// get the gifs to animate, and pause.
 function picmotion(y) {  
     var icon =document.getElementById(y);
         if ($(icon).attr("active") === "false"){

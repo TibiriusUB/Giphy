@@ -1,6 +1,13 @@
 @font-face {
-    font-family: "arcadeclassic";
+    font-family: "atarian";
     src: url("../fonts/SF Atarian System Extended Bold.ttf");
+}
+@font-face {
+    font-family: "arcadeclassic";
+    src: url("../fonts/ARCADECLASSIC.TTF");
+}
+body{
+    background-color: bisque;
 }
 #displayField{
     float: left;
@@ -13,11 +20,13 @@
 }
 span{
     float: left;  
+    margin: 5px
 }
 button{
-    font-family: "arcadeclassic";
+    font-family: "atarian";
     background-color: lightseagreen;
     border: none;
+    border-radius: 7px;
     color: white;
     padding: 10px 16px;
     text-align: center;
@@ -28,8 +37,10 @@ button{
     cursor: pointer;
 }
 #add-game{
+    font-family: "atarian";
     font-family: "arcadeclassic";
     background-color: lightseagreen;
+    border-radius: 7px;
     border: none;
     color: white;
     padding: 10px 16px;
@@ -39,4 +50,14 @@ button{
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+}
+p{
+    color:lightseagreen;
+    font-family: "arcadeclassic";
+    font-size: 16px
+}
+label{
+    font-family: "atarian";
+    color: lightseagreen;
+    font-size: 16px;
 }
