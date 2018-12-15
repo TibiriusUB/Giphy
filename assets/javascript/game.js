@@ -66,7 +66,7 @@ function picmaker(x) {
         for (j=0;j<gifgrab.length;j++) {
             var pic = $("<span>").addClass("pic"+[j])
             // absorb the data needed to animate, and still the gifs
-            var frame = $("<img>").attr("id","pic"+[j]).attr("src",gifgrab[j].images.fixed_width_small_still.url).attr("anim",gifgrab[j].images.fixed_width_small.url).attr("stop",gifgrab[j].images.fixed_width_small_still.url).attr("active", "false")
+            var frame = $("<img>").attr("id","pic"+[j]).attr("src",gifgrab[j].images.fixed_width_still.url).attr("anim",gifgrab[j].images.fixed_width.url).attr("stop",gifgrab[j].images.fixed_width_still.url).attr("active", "false")
             var rate = $("<p>").text("Rating: "+gifgrab[j].rating)
             $(pic).append(frame).append(rate)
             $("#displayField").append(pic)
