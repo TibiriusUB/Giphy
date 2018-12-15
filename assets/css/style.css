@@ -1,0 +1,11 @@
+#displayField{
+    float: left;
+    max-width: 70%;
+}
+#formField{
+    float: right
+
+}
+span{
+    float: left;  
+}

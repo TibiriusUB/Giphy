@@ -5,89 +5,20 @@
         <title>Giphy!</title>
         <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script> -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <!-- <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-        <link rel="stylesheet" type="text/css" href="assets/css/style.css"> -->
-        <style>
-        #displayField{
-            float: left;
-            max-width: 70%;
-        }
-        #formField{
-            float: right
-
-        }
-        span{
-            float: left;  
-        }
-        </style>
+        <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     </head>
+    <!-- Light Html just set the basics -->
     <body>
         <div id="STARTBUTTONS"></div>
-        
         <div id="formField">
             <form id="game-form">
                         <label for="game-insert">Insert Game!</label>
-                        <input type="text" id="game-insert" value=""><br>
+                        <input type="text" id="game-insert"><br>
                         <input id="add-game" type="submit" value="START">
             </form>
         </div>
         <div id="displayField"></div>
-        <script>
-
-            var arr = ["pacman","asteroids","digdug","mappy","tron","mrdo","centepede","millipede","dragonslair","galaga","galaxian","phoenix","spaceinvaders"];
-            var subject =""
-            renderbuttons(arr)
-            // Generate the buttons, from the pre-existing array
-           function renderbuttons(arr){
-            $("#STARTBUTTONS").empty()
-                for (var i=0;i<arr.length;i++) {
-                    var buttons = $("<button/>",{text:arr[i],id:arr[i]});
-                    $("#STARTBUTTONS").append(buttons);
-                }
-           }
-           // $("button").on("click", function() {console.log(this.id)})
-            $("#add-game").on("click", function(event) {
-            event.preventDefault();
-            addButton()
-            });
-            $("button").off("click").on("click", function() {
-                imageGrab(this.id)
-            });
-
-            function addButton() {
-            var pick = $("#game-insert").val().trim()
-            // pick up user additions, UPDATE THE ARRAY
-            arr.push(pick)
-            renderbuttons(arr)
-            };
-
-           
-            // create the display when a button is pressed INCLUDE GIF PAUSING!
-            $("button").off("click").on("click", function() {
-               
-        
-
-
-           
-                var subject = (this.id);
-                console.log(this.id)
-                var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + subject + "&api_key=Q2lrwAcl15KAz6XG41LXfR6uQ98yKph3&limit=10"; 
-                $.ajax({url: queryURL,method: "GET"})
-                .then(function(response) {
-                    $("#displayField").empty()
-                    var gifgrab = response.data
-                    console.log(gifgrab)
-                    for (j=0;j<gifgrab.length;j++) {
-                        var pic = $("<span>").addClass("pic"+[j])
-                        var frame = $("<img>").attr("src",gifgrab[j].images.fixed_width_small_still.url).attr("anim",gifgrab[j].images.fixed_width_small.url).attr("stop",gifgrab[j].images.fixed_width_small_still.url)
-                        var rate = $("<p>").text("Rating: "+gifgrab[j].rating)
-                        $(pic).append(frame).append(rate)
-                        $("#displayField").append(pic)
-
-                    }
-
-                });
-            });
-        </script>
+     <script src="assets/javascript/game.js"></script>  
     </body>
 </html>
